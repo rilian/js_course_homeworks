@@ -1,0 +1,44 @@
+<html>
+<head>
+  <script type="text/javascript" src='hw4.js'></script>
+</head>
+<body>
+  <p>getObject
+    <br>
+    <script>
+      var o = {a: {b: 'c'}};
+      document.writeln(getObject('a.b', o)); // 'c'
+      document.writeln(getObject('a', o)); // {b: 'c'}
+      document.writeln(getObject('d', o)); // undefined
+    </script>
+  </p>
+
+  <p>deepCopy
+    <br>
+    <script>
+      var a = {b: 'c', d: {e: 'f'}},
+      b = deepCopy(a);
+      a.d = 12;
+      document.writeln(b.d); // {e: 'f'}
+    </script>
+  </p>
+
+  <p>getFriends
+    <br>
+    <script>
+      var people = [
+        {id: 1, name: 'Brad', friends: [2,5,6]},
+        {id: 2, name: 'John', friends: [1, 3]},
+        {id: 3, name: 'Tom', friends: [2, 5]},
+        {id: 4, name: 'Fil', friends: null},
+        {id: 5, name: 'John', friends: [1, 3]},
+        {id: 6, name: 'Jim', friends: [1]}
+      ];
+
+      document.writeln(getFriends(2)); // [{id: 1, name: 'Brad', friends: [2,5,6]}, {id: 3, name: 'Tom', friends: [2, 5]}]
+      document.writeln(getFriends(4)); // []
+      document.writeln(getFriends(100500)); // null
+    </script>
+  </p>
+</body>
+</html>
