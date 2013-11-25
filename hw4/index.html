@@ -8,7 +8,7 @@
     <script>
       var o = {a: {b: 'c'}};
       document.writeln(getObject('a.b', o)); // 'c'
-      document.writeln(getObject('a', o)); // {b: 'c'}
+      document.writeln(JSON.stringify(getObject('a', o))); // {b: 'c'}
       document.writeln(getObject('d', o)); // undefined
     </script>
   </p>
