@@ -1,8 +1,9 @@
 function getObject(path, object) {
-  var tail = path.split(".");
-  if (tail.length == 1) return object[tail[0]];
-  var attr = tail.shift();
-  return getObject(tail.join("."), object[attr]);
+  return eval('object.' + path);
+//  var tail = path.split(".");
+//  if (tail.length == 1) return object[tail[0]];
+//  var attr = tail.shift();
+//  return getObject(tail.join("."), object[attr]);
 }
 
 function deepCopy(source) {
